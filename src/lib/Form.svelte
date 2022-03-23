@@ -181,7 +181,7 @@
         <Spinner />
         Loading ...
       {:else}
-        Get started
+        Get startedd
         <i class="ml-2 icon-arrow-right" />
       {/if}
     </button>
