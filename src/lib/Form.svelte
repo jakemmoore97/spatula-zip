@@ -43,7 +43,7 @@
 
   let alerts = createAlerts({
     zip: {
-      title: 'Weeeessssseei are not in your city yet, but we’re coming soon!',
+      title: 'SPATULA are not in your city yet, but we’re coming soon!',
       description:
         'We will send you an email as soon as SPATULA is ready in your city. (ENTER EMAIL)',
     },
@@ -216,7 +216,7 @@
             >{#if checkZip(zip)}
               Get ready for something good!
             {:else}
-              We’re not in your city yet, but we’re coming soon!
+            SPATULA not in your city yet, but we’re coming soon!
             {/if}
           </DialogTitle>
           <DialogDescription class="modal-description">
