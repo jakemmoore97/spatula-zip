@@ -43,7 +43,7 @@
 
   let alerts = createAlerts({
     zip: {
-      title: 'We’re not in your city yet, but we’re coming soon!',
+      title: 'We are not in your city yet, but we’re coming soon!',
       description:
         'We will send you an email as soon as SPATULA is available in your city. (ENTER EMAIL)',
     },
