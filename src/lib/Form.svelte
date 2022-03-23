@@ -45,7 +45,7 @@
     zip: {
       title: 'We are not in your city yet, but we’re coming soon!',
       description:
-        'We will send you an email as soon as SPATULA is available in your city. (ENTER EMAIL)',
+        'We will send you an email as soon as SPATULA is ready in your city. (ENTER EMAIL)',
     },
     email: {
       title: 'Invalid email',
