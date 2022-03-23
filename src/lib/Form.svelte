@@ -171,6 +171,13 @@
       bind:value={fullZip}
       use:uppercase
     />
+    <input
+                class="input"
+                placeholder="Email"
+                type="email"
+                bind:this={emailRef}
+                bind:value={email}
+    />
     <button
       class="button min-w-full md:min-w-[unset]"
       class:cursor-wait={loading}
