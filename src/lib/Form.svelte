@@ -224,7 +224,7 @@
             >{#if checkZip(zip)}
               Get ready for something good!
             {:else}
-            SPATULA not in your city yet, but we’re coming soon!
+            SPATULA is not in your city yet, but we’re coming soon!
             {/if}
           </DialogTitle>
           <DialogDescription class="modal-description">
