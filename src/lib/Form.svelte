@@ -20,6 +20,7 @@
   import type {Task} from 'fp-ts/Task'
   import {lens} from 'lens.ts'
   import {redirectUrl} from '../constants'
+  import {winUrl} from '../constants'
   import {uppercase} from '../hooks/uppercase'
   import {disclosureStore} from '../stores/disclosure'
   import type {Alert} from '../util/alerts'
@@ -157,7 +158,7 @@
   }
   type HandleSuccess = Task<void>
   const handleSuccess: HandleSuccess = async () => {
-    window.parent.location.href = redirectUrl
+    window.parent.location.href = winUrl
   }
 </script>
 
