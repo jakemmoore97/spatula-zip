@@ -257,7 +257,7 @@
 </form>
 
 <style>
-  .max-w-md .space-y-2 .text-center .mb-8 {
+  .max-w-md  {
     margin-left: auto!important;
     margin-right: auto!important;
     width: 28em;
