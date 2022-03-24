@@ -228,7 +228,7 @@
           </DialogTitle>
           <DialogDescription class="modal-description">
             {#if checkZip(zip)}
-              Good news! We do deliver to your area. View our dishes now.
+              Good news! We do deliver to your area. Build your Box now.
             {:else}
               We will send you an email as soon as SPATULA is available in your
               city
@@ -247,7 +247,7 @@
                 bind:value={email}
               />
             {/if}
-            <button class="modal-button" type="submit">View dishes</button>
+            <button class="modal-button" type="submit">View </button>
           </form>
         </div>
       </TransitionChild>
