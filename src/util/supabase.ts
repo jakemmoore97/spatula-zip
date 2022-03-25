@@ -3,8 +3,8 @@ import type {SupabaseQueryBuilder} from '@supabase/supabase-js/dist/main/lib/Sup
 import type {definitions} from '../generated/supabase'
 
 const client = createClient(
-  'https://lyktewmeyuuswcdvpzwe.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MTI4MzMwMywiZXhwIjoxOTU2ODU5MzAzfQ.U7Eb_C1u2flHL1-s0AQGYcGIpA1e03nfiYf--t3nsUk'
+  'https://gwxljouvmhkyroyulwrn.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3eGxqb3V2bWhreXJveXVsd3JuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgyMTgyNzksImV4cCI6MTk2Mzc5NDI3OX0.ST3TlAtmIqIC3NeAUd-0ABplPzStSdMqZ-yEQ_jyXZw'
 )
 
 type From = <T extends keyof definitions>(
