@@ -28,7 +28,7 @@
   import {checkZip} from '../util/checkZip'
   import type {OptionFrom} from '../util/option'
   import {runWith} from '../util/runWith'
-  import {addPerson} from '../util/klavio'
+  import {createClient} from '../util/supabase'
   import Alerts from './Alerts.svelte'
   import Spinner from './Spinner.svelte'
 
@@ -155,10 +155,12 @@
   type HandleFailure = Task<void>
   const handleFailure: HandleFailure = async () => {
     window.parent.location.href = redirectUrl
+    window.parent.location.href = createClient
   }
   type HandleSuccess = Task<void>
   const handleSuccess: HandleSuccess = async () => {
     window.parent.location.href = winUrl
+    window.parent.location.href = createClient
   }
 </script>
 
