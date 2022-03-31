@@ -195,6 +195,7 @@
         <i class="ml-2 icon-arrow-right" />
       {/if}
     </button>
+    .
   </div>
   <Alerts {alerts} />
   <Transition appear show={isOpen}>
