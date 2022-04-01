@@ -13,7 +13,7 @@
   .lg\:max-w-lg  {
     margin-left: auto!important;
     margin-right: auto!important;
-    width: 28em;
+
     
   }
 </style>
