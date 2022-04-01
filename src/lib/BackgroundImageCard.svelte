@@ -7,3 +7,9 @@
 <div class="top-md card absolute-center">
   <slot />
 </div>
+
+<style>
+   .card  {
+     padding: 1.5rem 1.5rem!important;
+  }
+</style>
