@@ -195,9 +195,9 @@
         <i class="ml-2 icon-arrow-right" />
       {/if}
     </button>
-    <div class="paragraph"> By signing up, you agree to receive email marketing </div>
-
   </div>
+   <div class="paragraph"> By signing up, you agree to receive email marketing </div>
+
   <Alerts {alerts} />
   <Transition appear show={isOpen}>
     <Dialog
