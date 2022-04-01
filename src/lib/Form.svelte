@@ -28,7 +28,7 @@
   import {checkZip} from '../util/checkZip'
   import type {OptionFrom} from '../util/option'
   import {runWith} from '../util/runWith'
-
+  import {createClient} from '../util/supabase'
   import Alerts from './Alerts.svelte'
   import Spinner from './Spinner.svelte'
 
