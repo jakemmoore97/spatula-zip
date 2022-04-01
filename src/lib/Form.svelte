@@ -259,4 +259,9 @@
     </Dialog>
   </Transition>
 </form>
-
+<style>
+.paragraph {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  }
+</style>
