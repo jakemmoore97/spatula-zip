@@ -10,6 +10,6 @@
 
 <style>
    .card  {
-     padding: 1.5rem 1.5rem!important;
+     padding: 1.5rem 1rem!important;
   }
 </style>
