@@ -195,7 +195,7 @@
         <i class="ml-2 icon-arrow-right" />
       {/if}
     </button>
-    <div class="disclaimer"> By signing up, you agree to receive email marketing </div>
+    <div class="paragraph"> By signing up, you agree to receive email marketing </div>
 
   </div>
   <Alerts {alerts} />
