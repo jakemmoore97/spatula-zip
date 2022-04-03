@@ -31,8 +31,7 @@
 
   import Alerts from './Alerts.svelte'
   import Spinner from './Spinner.svelte'
-  import {from} from '../util/supabase'
-
+  
   let fullZip: string = ''
   let email: string
   let zipRef: HTMLInputElement
