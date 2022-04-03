@@ -152,20 +152,20 @@
       })
     )
   }
-  type HandleFailure = Task<void>
-  const handleFailure: HandleFailure = async () => {
-     await from('emails').insert({
+  const handleFailure = async () => {
+    const {data} = await from('emails').insert({
       email,
       zip,
     })
+    console.log(data)
     window.parent.location.href = redirectUrl
   }
-  type HandleSuccess = Task<void>
-  const handleSuccess: HandleSuccess = async () => {
-    await from('emails').insert({
+  const handleSuccess = async () => {
+    const {data} = await from('emails').insert({
       email,
       zip,
     })
+    console.log(data)
     window.parent.location.href = winUrl
   }
 </script>
@@ -245,10 +245,7 @@
               city
             {/if}
           </DialogDescription>
-          <form
-            class="flex flex-col space-y-4"
-            on:submit={checkZip(zip) ? handleSuccess : handleFailure}
-          >
+           <div class="flex flex-col space-y-4">
             {#if !checkZip(zip)}
               <input
                 class="input"
@@ -258,8 +255,12 @@
                 bind:value={email}
               />
             {/if}
-            <button class="modal-button" type="submit">View </button>
-          </form>
+             <button
+                class="modal-button"
+                on:click={checkZip(zip) ? handleSuccess : handleFailure}
+                >View dishes</button
+              >
+            </div>
         </div>
       </TransitionChild>
     </Dialog>
