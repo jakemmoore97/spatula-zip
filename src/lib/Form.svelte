@@ -31,6 +31,7 @@
 
   import Alerts from './Alerts.svelte'
   import Spinner from './Spinner.svelte'
+  import {from} from '../util/supabase'
 
   let fullZip: string = ''
   let email: string
@@ -154,13 +155,19 @@
   }
   type HandleFailure = Task<void>
   const handleFailure: HandleFailure = async () => {
+     await from('emails').insert({
+      email,
+      zip,
+    })
     window.parent.location.href = redirectUrl
-    window.parent.location.href = createClient
   }
   type HandleSuccess = Task<void>
   const handleSuccess: HandleSuccess = async () => {
+    await from('emails').insert({
+      email,
+      zip,
+    })
     window.parent.location.href = winUrl
-    window.parent.location.href = createClient
   }
 </script>
 
