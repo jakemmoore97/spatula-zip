@@ -255,11 +255,8 @@
                 bind:value={email}
               />
             {/if}
-             <button
-                class="modal-button"
-                on:click={checkZip(zip) ? handleSuccess : handleFailure}
-                >View dishes</button
-              >
+               <button class="modal-button" type="submit">View dishes</button>
+          </form>
             </div>
         </div>
       </TransitionChild>
