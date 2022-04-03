@@ -28,20 +28,15 @@
   import {checkZip} from '../util/checkZip'
   import type {OptionFrom} from '../util/option'
   import {runWith} from '../util/runWith'
-
   import Alerts from './Alerts.svelte'
   import Spinner from './Spinner.svelte'
-  
   let fullZip: string = ''
   let email: string
   let zipRef: HTMLInputElement
   let emailRef: HTMLInputElement
   let loading = false
-
   $: zip = fullZip?.slice(0, 3)
-
   const successModal = disclosureStore(false)
-
   let alerts = createAlerts({
     zip: {
       title: 'SPATULA are not in your city yet, but we’re coming soon!',
@@ -53,10 +48,8 @@
       description: 'Please check your email',
     },
   })
-
   type AlertTuple = [boolean, BaseAlert]
   type AlertKey = keyof typeof alerts
-
   /**
    * Invalidates the alert only
    */
@@ -64,7 +57,6 @@
   const falsifyValid: FalseifyValid = key => () => {
     alerts[key].valid = false
   }
-
   /**
    * Invalidates the alert and overrides the check message and description
    */
@@ -77,7 +69,6 @@
         ...alert,
       }
     }
-
   type HandleAlert = (key: AlertKey) => (alertTuple: Option<AlertTuple>) => void
   /**
    * Handles an optional check
@@ -91,7 +82,6 @@
    */
   const handleAlert: HandleAlert = key =>
     pipe([falsifyValid, setAlert], A.map(runWith(key)), tupled(O.match))
-
   type Checks = (ref: HTMLInputElement) => AlertTuple[]
   type Invalidate = (
     key: AlertKey,
@@ -108,14 +98,11 @@
     ref.focus()
     loading = false
   }
-
   const input = lens<HTMLInputElement>()
   let isOpen = false
   successModal.isOpen.subscribe(open => (isOpen = open))
-
   type NoneIfNoValue = OptionFrom<HTMLInputElement>
   const noneIfNoValue: NoneIfNoValue = O.fromPredicate(input.value.get(isEmpty))
-
   type HasValue = Predicate<HTMLInputElement | undefined>
   const hasValue: HasValue = flow(
     O.fromNullable,
@@ -136,7 +123,6 @@
     description: 'Please type something',
   } as const
   const alert = lens<Alert>()
-
   type HandleSubmit = Task<void>
   const handleSubmit: HandleSubmit = async () => {
     alerts = pipe(alerts, R.map(alert.valid.set(null)))
@@ -154,22 +140,15 @@
   }
   type HandleFailure = Task<void>
   const handleFailure: HandleFailure = async () => {
-     await from('emails').insert({
-      email,
-      zip,
-    })
     window.parent.location.href = redirectUrl
+    window.parent.location.href = createClient
   }
   type HandleSuccess = Task<void>
   const handleSuccess: HandleSuccess = async () => {
-    await from('emails').insert({
-      email,
-      zip,
-    })
     window.parent.location.href = winUrl
+    window.parent.location.href = createClient
   }
 </script>
-
 <form class="form" on:submit|preventDefault={handleSubmit}>
   <div class="flex flex-wrap gap-2">
     <input
@@ -197,13 +176,12 @@
         <Spinner />
         Loading ...
       {:else}
-        Get started!
+        Get started
         <i class="ml-2 icon-arrow-right" />
       {/if}
     </button>
+    <div class="paragraph"> By signing up, you agree to receive email marketing </div>
   </div>
-   <div class="paragraph"> By signing up, you agree to receive email marketing </div>
-
   <Alerts {alerts} />
   <Transition appear show={isOpen}>
     <Dialog
@@ -265,9 +243,3 @@
     </Dialog>
   </Transition>
 </form>
-<style>
-.paragraph {
-  margin-left: auto!important;
-  margin-right: auto!important;
-  }
-</style>
